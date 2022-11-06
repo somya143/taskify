@@ -44,5 +44,35 @@
     display: flex;
     justify-content: space-evenly;
     font-size: 20px;
-    gap: 20px;
+    width: 90%;
+    flex-wrap: wrap;
+}
+.todo__single{
+    display: flex;
+    width: 30%;
+    border-radius: 15px;
+    margin-top: 15px;
+    padding: 20px;
+    background-image: url("https://img.freepik.com/free-photo/abstract-solid-shining-yellow-gradient-studio-wall-room-background_1258-54539.jpg?size=626&ext=jpg&uid=R84030473&ga=GA1.2.798586548.1667741386&semt=sph");
+}
+.todos_single__text{
+    flex: 1;
+    font-size: 20px;
+    padding: 5px;
+}
+.icon{
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 25px;
+}
+@media (max-width: 700px) {
+.input-box{
+    width: 95%;
+}
+.todo{
+    width: 90%;
+}
+.todo__single{
+    width: 100%;
+}
 }
