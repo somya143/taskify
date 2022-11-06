@@ -39,3 +39,10 @@
     transform: scale(0.8);
     box-shadow:0 0 5px black ;
 }
+
+.todo{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    gap: 20px;
+}

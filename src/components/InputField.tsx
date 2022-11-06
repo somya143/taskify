@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import "./styles.css"
 
 type InputProps = {
@@ -7,11 +7,14 @@ type InputProps = {
   handleAdd : (e:React.FormEvent<HTMLFormElement>) => void;
 }
 const InputField = ({handleAdd,todo,setTodo}: InputProps) => {
-
+const inputRef = useRef<HTMLInputElement>(null);
 
   return (
-   <form action="" className='form' onSubmit={handleAdd}>
-    <input type="input" className='input-box' value={todo} placeholder='Enter Task' onChange={(e)=> setTodo(e.target.value)} />
+   <form action="" className='form' onSubmit={(e) => {
+    handleAdd(e);
+    inputRef.current?.blur()
+   }}>
+    <input type="input" className='input-box' ref={inputRef} value={todo} placeholder='Enter Task' onChange={(e)=> setTodo(e.target.value)} />
     <button type='submit' className='submit-button'>ADD</button>
    </form>
   )

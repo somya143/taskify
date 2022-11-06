@@ -22,6 +22,7 @@ setTodos([...todos , {
  }]
  
   )
+  setTodo("")
 }
 console.log(todos)
   return (
@@ -29,11 +30,7 @@ console.log(todos)
     <span className="headers">Taskify</span>
      <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
 
-     {
-      todos.map((el) => (
-       <div key={el.id}>{el.title}--{el.isDone}</div>
-      ))
-     }
+     <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
